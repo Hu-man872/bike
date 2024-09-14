@@ -1,0 +1,399 @@
+/* Global Styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Use Roboto font */
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    background: linear-gradient(90deg, #007BFF, #00C6FF);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #0056b3, #008cff);
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    backdrop-filter: blur(10px); /* Blur effect */
+    border-bottom: 1px solid #ddd; /* Subtle border */
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-links li {
+    margin: 0 15px;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease, padding-bottom 0.3s ease;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent; /* Line under the link */
+}
+
+.navbar .nav-links a:hover {
+    color: #007bff; /* Highlight color */
+    border-bottom: 2px solid #007bff; /* Underline on hover */
+}
+
+/* Navbar for smaller screens */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .navbar .nav-links {
+        flex-direction: column;
+    }
+
+    .navbar .nav-links li {
+        margin: 10px 0;
+    }
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background-image: url('./assets.newatlas.webp');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* About Section */
+.about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #555;
+}
+
+/* Bikes Section */
+.bikes-section {
+    padding: 50px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.bikes-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #00C6FF;
+}
+
+.bike-catalogue {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Added flex-wrap to ensure items wrap on smaller screens */
+    gap: 30px;
+}
+
+.bike {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 300px;
+    min-height: 400px; /* Added minimum height to prevent overlapping */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.bike img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px; /* Space between image and text */
+}
+
+.bike h3 {
+    margin: 15px 0;
+}
+
+.bike p {
+    margin: 12px 0;
+    color: #555;
+}
+
+.bike .btn {
+    margin-top: 20px; /* Space between the details and the button */
+}
+
+.bike:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 50px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact-form input, .contact-form textarea {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.contact-form textarea {
+    height: 100px;
+}
+
+.contact-form button {
+    padding: 10px;
+}
+
+/* Footer Section */
+.footer {
+    background-color: #222; /* Darker background color for better contrast */
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 5px solid #007bff; /* Blue border on top for accent */
+}
+
+.footer h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.footer p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #ccc; /* Light grey text for less emphasis */
+}
+
+.footer .social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer .social-links a {
+    color: #fff;
+    font-size: 1.5rem; /* Larger icons for better visibility */
+    transition: color 0.3s ease;
+}
+
+.footer .social-links a:hover {
+    color: #00C6FF; /* Light blue color on hover */
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+    .footer {
+        padding: 30px 10px;
+    }
+
+    .footer h2 {
+        font-size: 1.5rem;
+    }
+
+    .footer p {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Carousel Container Styles */
+.carousel {
+    position: relative;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+    border-radius: 0; /* Optional: remove border radius for full screen */
+}
+
+.carousel-images {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire slide */
+    display: block;
+}
+
+/* Carousel Buttons Styles */
+.carousel-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.carousel-button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 2rem; /* Increase size for better visibility */
+}
+
+/* Bike Info Styles */
+.bike-info {
+    margin-top: 30px;
+    padding: 20px;
+    background: #ffffff; /* White background for clean look */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /* Center align text */
+}
+
+.bike-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333; /* Dark grey color for heading */
+    font-family: 'Roboto', sans-serif; /* Apply Roboto font */
+}
+
+.bike-info p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666; /* Medium grey color for text */
+    margin-bottom: 15px;
+}
+
+.bike-info p strong {
+    color: #333; /* Dark grey color for strong text */
+}
+
+.bike-info .btn {
+    display: inline-block;
+    background: #007bff; /* Blue background */
+    color: white;
+    padding: 12px 25px; /* Slightly larger padding */
+    border-radius: 8px; /* Rounded corners */
+    text-decoration: none;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.bike-info .btn:hover {
+    background: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.bike-info .btn:active {
+    background: #004494; /* Even darker blue on click */
+}
